@@ -1,0 +1,7 @@
+#txt {
+    color:#A4C5E8; font-size: 40px; -webkit-app-region:drag;
+}
+#showData {
+    color:#A4C5E8; font-size: 20px; display: contents; -webkit-app-region:drag;
+}
+#bd { color:rgb(12, 13, 14); font-size: 20px;}

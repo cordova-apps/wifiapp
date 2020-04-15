@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<link type='text/css' rel='stylesheet' href='style.css' />
+<meta http-equiv="Content-Security-Policy" content="default-src *;
+   img-src * 'self' data: https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' *;
+   style-src  'self' 'unsafe-inline' *">
+<meta name="msapplication-tap-highlight" content="no">
+</head>
+
+<body>
+    <script type="text/javascript" src="cordova.js"></script>
+    <div class="wifidata">
+        <input id="urllink" value="http://192.168.1.100">
+      <p id="wifitext">
+          h                      
+      </p>
+      <button class="switch topcoat-button" onclick='run();' >Hello<i  class="fab fa-app-store"></i></button>
+      <input class="switch topcoat-button" type="button"  value="0001" onclick='loadXMLDoc()' >
+      <script>
+
+
+function loadXMLDoc() {
+var url = document.getElementById("urllink").value; 
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("wifitext").innerHTML =
+      this.responseText;
+    }
+  };
+  xhttp.open("GET", url, true);
+  xhttp.send();
+}
+
+
+
+ function requestdata(url1) {
+    var xmlhttp = new XMLHttpRequest();
+    var url = url1;
+
+    xmlhttp.open("GET", url, true);
+    xmlhttp.onloadend = function() {
+    document.getElementById("wifitext").innerHTML = "status "+ xmlhttp.status+ "<br>response : "+ xmlhttp.responseText;
+    }
+    xmlhttp.send();
+}
+
+function run() {
+    requestdata("http://192.168.1.100");
+}
+function run2() {
+    
+}
+
+      </script>
+    </div>
+
+
+</body>
+</html>
