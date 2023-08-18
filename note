@@ -1,0 +1,3 @@
+docker run --name cordova --privileged -v /dev/bus/usb:/dev/bus/usb we2app/cordova
+docker exec -it cordova /bin/bash
+lsusb
